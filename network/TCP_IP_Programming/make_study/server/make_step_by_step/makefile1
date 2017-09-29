@@ -1,0 +1,16 @@
+all: TCPEchoServer4
+
+TCPEchoServer4: TCPEchoServer4.o DieWithMessage.o TCPServerUtility.o
+	gcc -Wall -Wextra -o TCPEchoServer4 TCPEchoServer4.o DieWithMessage.o TCPServerUtility.o
+
+TCPEchoServer4.o: TCPEchoServer4.c
+	gcc -Wall -Wextra -c -o TCPEchoServer4.o TCPEchoServer4.c
+
+DieWithMessage.o: ../include/DieWithMessage.c
+	gcc -Wall -Wextra -c -o DieWithMessage.o ../include/DieWithMessage.c
+
+TCPServerUtility.o: ../include/TCPServerUtility.c
+	gcc -Wall -Wextra -c -o TCPServerUtility.o ../include/TCPServerUtility.c
+
+clean: 
+	rm -rf *.o TCPEchoServer4
