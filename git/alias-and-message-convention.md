@@ -164,10 +164,9 @@ alias gaa='git add --all'
 alias gc='git commit'
 ```
 
-<br>
-
 위처럼 만들어 git add와 commit을 단 두세글자로 통일할 수 있습니다.  
 특히 git add, git commit은 가장 많이 쓰는 명령어이기 때문에 꼭 해보셨으면 좋겠습니다.  
+
 
 여기서 한발 더 나아가면, git add와 git commit을 보통 같이 쓰기 때문에  
 이 둘을 한 명령어로 처리하고 싶을 수 있고, 실제로 가능합니다.  
