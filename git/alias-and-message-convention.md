@@ -154,10 +154,9 @@ alias push='git push origin master'
 alias st='git status'
 ```
 
-<br>
-
 pull, push, status를 최대한 짧게 쓰기 위해 만들었고,  
 
+<br>
 
 ```sh
 alias ga='git add'
