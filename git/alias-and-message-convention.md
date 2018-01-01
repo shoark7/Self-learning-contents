@@ -146,12 +146,15 @@ alias 명령어='줄일 표현'
 
 제가 쓰고 있는 단축키들을 조금 보여드릴게요
 
+<br>
 
 ```sh
 alias pull='git pull origin master'
 alias push='git push origin master'
 alias st='git status'
 ```
+
+<br>
 
 pull, push, status를 최대한 짧게 쓰기 위해 만들었고,  
 
@@ -161,6 +164,8 @@ alias ga='git add'
 alias gaa='git add --all'
 alias gc='git commit'
 ```
+
+<br>
 
 위처럼 만들어 git add와 commit을 단 두세글자로 통일할 수 있습니다.  
 특히 git add, git commit은 가장 많이 쓰는 명령어이기 때문에 꼭 해보셨으면 좋겠습니다.  
