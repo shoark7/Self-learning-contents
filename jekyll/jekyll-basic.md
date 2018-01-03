@@ -10,7 +10,7 @@
 
 ## 0. Jekyll 설치
 
-Jekyll은 기본적으로 ruby라는 프로그래밍으로 만들어진 '프로그램'이고, 따라서  
+Jekyll은 기본적으로 ruby라는 프로그래밍 언어로 만들어진 '프로그램'이고, 따라서  
 ruby의 패키지 관리자인 gem을 통해 컴퓨터에 설치 가능하다.  
 
 mac의 경우에는 기본적으로 gem이 깔려 있고, Ubuntu 등에서 gem이 설치되어 있지 않다면  
@@ -102,15 +102,15 @@ jekyll serve
 로컬 호스트(127.0.0.1)의 4000번 포트에서 서버가 동작하고 있다는 의미이며, 크롬 등 브라우저에서  
 `127.0.0.1:4000`을 입력하면 투박하지만 어떤 페이지가 나오는 것을 알 수 있다.  
 초라하지만 일단 프로젝트가 동작하고 있다는 것을 의미한다. 꾸미는 것은 이제 할 것이니까 걱정 말자.  
-'네 시작은 미천했지만 그 끝은 창대하리라.  
+'네 시작은 미천했지만 그 끝은 창대하리라.'  
 
 
 <br>
 
-> 요약
+> 요약  
 >
-> `jekyll new PATH`로 프로젝트를 시작한다.  입력한 PATH로 프로젝트 디렉토리가 생성된다.
-> `jekyll serve`로 프로젝트를 로컬에서 테스트해볼 수 있다. 이후 템플릿 개발 등에서 자주 사용할 것이다.
+> `jekyll new PATH`로 프로젝트를 시작한다.  입력한 PATH로 프로젝트 디렉토리가 생성된다.  
+> `jekyll serve`로 프로젝트를 로컬에서 테스트해볼 수 있다. 이후 템플릿 개발 등에서 자주 사용할 것이다.  
 
 <br>
 <br>
@@ -120,7 +120,7 @@ jekyll serve
 ## 2. Jekyll을 github에 연동해보기
 결국 우리가 Jekyll을 공부하는 이유는 github에 연동하기 위해서일 것이다.  
 Jekyll은 정적인 사이트 생성 프로그램이고, 서버 등에 연동하는 것(호스팅)을 github가 우리를 위해  
-대신 해준다.  그러면 우리는 서버관리, 장고 등 백엔드 관리 등을 할 필요가 없는 것이다.
+대신 해준다.  그러면 우리는 서버관리, 장고 등 백엔드 관리 등을 할 필요가 없는 것이다.  
 그러려면 당연히 github 아이디는 가지고 있어야 한다. 만약 없다면 어떤 식으로든 만들어야 한다.
 
 github는 우리에게 무료, 자동으로 호스팅해주는 기능을 가지고 있고, 그것을 사용하려면  
@@ -170,12 +170,12 @@ git push -u origin master
 > 요약
 >
 > 우리의 최종 목표는 github.io 페이지를 만드는 것이고, 그러려면  
-> **jekyll** 프로젝트와 github의 원격 repository를 연결해주어야 한다.
+> **jekyll** 프로젝트와 github의 원격 repository를 연결해주어야 한다.  
 > 앞서 만든 jekyll 프로젝트를 git repository로 만들고,  
-> github에서는 `아이디.github.io`의 이름으로 된 repository를 만든다.
-> `git remote add origin git@github.com:아이디/아이디.github.io.git` 문장을 jekyll project에서 실행한다.
-> `git push -u origin master` 문장으로 로컬의 jekyll project를 원격의 git repository로 push한다.
-> 1~2여분 후 `아이디.github.io`를 브라우저에 입력하면 기본 페이지를 확인할 수 있다.
+> github에서는 `아이디.github.io`의 이름으로 된 repository를 만든다.  
+> `git remote add origin git@github.com:아이디/아이디.github.io.git` 문장을 jekyll project에서 실행한다.  
+> `git push -u origin master` 문장으로 로컬의 jekyll project를 원격의 git repository로 push한다.  
+> 1~2여분 후 `아이디.github.io`를 브라우저에 입력하면 기본 페이지를 확인할 수 있다.  
 
 
 <br>
@@ -219,13 +219,14 @@ git push -u origin master
 		 	  하나의 파일로 관리하는 것이 훨씬 편리하다. 
 * \_drafts		: draft는 `초안`의 의미가 있다. **아직 게시되지 않은 포스트를 말한다.**   
 			  파일명 형식에 날짜가 없다. `title.MARKUP`
-* \_includes		: **재사용하기 위한 파일을 담는 디렉토리.** 필요에 따라 포스트나 레이아웃에 삽입
-			  `{% include file.ext %}`와 같이 liquid 태그를 사용하면, `\_includes/file.ext`  
+* \_includes		: **재사용하기 위한 파일을 담는 디렉토리.**  
+			  필요에 따라 포스트나 레이아웃에 삽입.  
+			  `{% include file.ext %}`와 같이 liquid 태그를 사용하면, `_includes/file.ext`  
 			  파일에 담긴 코드가 삽입된다.
 * \_layouts		: 포스트를 포장할 때 사용하는 템플릿. YAML 머리말로 포스트별로 레이아웃을 선택하며,  
 			  `{{ content }}`와 같이 liquid 태그를 사용하면 페이지에 컨텐츠가 삽입된다.
-* \_posts		: 실제 포스트들이 담긴다. 이때 **반드시 파일 명명 규칙을 준수해야 하며**, 다음과 같다.
-			  `**YEAR-MONTH-DAY-title.MARKUP**` 주소는 포스트별로 정의할 수 있지만,  
+* \_posts		: 실제 포스트들이 담긴다. 이때 **반드시 파일 명명 규칙을 준수해야 하며**, 다음과 같다.  
+			  `YEAR-MONTH-DAY-title.MARKUP` 주소는 포스트별로 정의할 수 있지만,  
 			  날짜와 마크업 종류는 오로지 파일명에 의해 결정된다.
 * \_data		: 사이트에서 사용할 데이터를 적절한 포맷으로 정리하여 보관하는 디렉토리.  
 			  Jekyll 엔진은 이 디렉토리의 '.yml', '.yaml', '.json', '.csv' 등 모든 YAML 파일을 읽어  
@@ -236,6 +237,6 @@ git push -u origin master
 * .jekyll-metadata	: Jekyll은 이 파일을 참고해 마지막으로 빌드한 이후 한 번도 수정되지 않은 파일은  
 			  어떤 것인지, 다음 빌드 때 어떤 파일을 다시 생성해야 하는지 판단할 수 있다.  
 			  이 파일 또한 `.gitignore`에 추가하는 것은 괜찮은 생각.
-* `index.html` 등	: Jekyll은 YAML 머리말 섹션을 가진 모든 파일을 찾아 변환 작업을 수행.
+* `index.html` 등	: Jekyll은 YAML 머리말 섹션을 가진 모든 파일을 찾아 변환 작업을 수행.  
 			  이 섹션을 가지고 있지 않은 모든 '.html', '.md', '.markdown' 등이 여기 포함.
 * `css`, `image` 폴더	: `favicon`과 같이 이런 폴더나 파일들은 변하지 않고 그대로 생성된 사이트에 복사.
