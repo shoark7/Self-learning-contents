@@ -111,3 +111,77 @@ jekyll serve
 >
 > `jekyll new PATH`로 프로젝트를 시작한다.  입력한 PATH로 프로젝트 디렉토리가 생성된다.
 > `jekyll serve`로 프로젝트를 로컬에서 테스트해볼 수 있다. 이후 템플릿 개발 등에서 자주 사용할 것이다.
+
+<br>
+<br>
+<br>
+
+
+## 2. Jekyll을 github에 연동해보기
+결국 우리가 Jekyll을 공부하는 이유는 github에 연동하기 위해서일 것이다.  
+Jekyll은 정적인 사이트 생성 프로그램이고, 서버 등에 연동하는 것(호스팅)을 github가 우리를 위해  
+대신 해준다.  그러면 우리는 서버관리, 장고 등 백엔드 관리 등을 할 필요가 없는 것이다.
+그러려면 당연히 github 아이디는 가지고 있어야 한다. 만약 없다면 어떤 식으로든 만들어야 한다.
+
+github는 우리에게 무료, 자동으로 호스팅해주는 기능을 가지고 있고, 그것을 사용하려면  
+우리는 특수한 git repository를 만들어야 한다. 그것의 이름은,
+
+```sh
+각자아이디.github.io
+
+# 내 경우는 shoark7.github.io
+```
+
+가 된다.  
+
+이 이름으로 리포지토리를 만들면 github는 자동으로 이 리포지토리의 내용물을 호스팅할 하나의 폴더로 인식한다.  
+이제 우리가 할 것은 우리가 만든 Jekyll 프로젝트를 이 `아이디.github.io` 깃 디렉토리와 연동하는 것이다.  
+
+<br>
+
+만든 jekyll 디렉토리에서 다음과 같이 입력한다.
+
+
+```sh
+git init
+git add --all
+git commit -m "Create jekyll project
+```
+
+git에 대한 설명은 하지 않는다. 이 정도는 공부했다고 감히 가정한다.
+
+그리고 github에서 `아이디.github.io` 리포지토리를 생성 후 바로 뜨는 페이지에서 
+`git remote add origin git@github.com:아이디/아이디.github.io.git` 문장을 복사한 후 
+**jekyll project 디렉토리 안에서 실행한다.**  이제 jekyll 프로젝트와 github repository는 연동됐다.  
+이제 jekyll project의 내용을 github로 쏜다.
+
+```sh
+git push -u origin master
+```
+
+`-u` 옵션은 처음 push할 때는 필요하다.   
+
+이제 한 1~2분 후 browser에 `아이디.github.io`라고 입력하면 jekyll 프로젝트의 기본 페이지를 볼 수 있다.  
+꾸미는 것은 jekyll project의 구조를 확인한 후 본격적으로 시작한다.
+
+
+<br>
+
+> 요약
+>
+> 우리의 최종 목표는 github.io 페이지를 만드는 것이고, 그러려면  
+> **jekyll** 프로젝트와 github의 원격 repository를 연결해주어야 한다.
+> 앞서 만든 jekyll 프로젝트를 git repository로 만들고,  
+> github에서는 `아이디.github.io`의 이름으로 된 repository를 만든다.
+> `git remote add origin git@github.com:아이디/아이디.github.io.git` 문장을 jekyll project에서 실행한다.
+> `git push -u origin master` 문장으로 로컬의 jekyll project를 원격의 git repository로 push한다.
+> 1~2여분 후 `아이디.github.io`를 브라우저에 입력하면 기본 페이지를 확인할 수 있다.
+
+
+<br>
+<br>
+<br>
+
+
+## 3. Jekyll 프로젝트의 구조
+
