@@ -185,3 +185,57 @@ git push -u origin master
 
 ## 3. Jekyll 프로젝트의 구조
 
+'jekyll new'로 프로젝트를 생성하면 디렉토리에 여러 파일이 생겼을텐데,  
+이는 jekyll 프로젝트의 정말 뼈대만을 담고 있다. 일반 프로젝트를 가정하고,  
+공식 페이지에서 가정하는 '보통의' 프로젝트의 프로젝트 구조를 가져와서 이를 하나씩 살펴보자.
+
+
+```sh
+.
+├── _config.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.textile
+|   └── on-simplicity-in-technology.markdown
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   └── 2009-04-26-barcamp-boston-4-roundup.textile
+├── _data
+|   └── members.yml
+├── _site
+├── .jekyll-metadata
+└── index.html
+```
+
+<br> 이제 각각에 대해 살펴보면 다음과 같다. <br>
+
+
+* \_config.yml		: **환경설정 정보 파일.**  명령에 여러 옵션을 부여할 수 있지만,  
+		 	  하나의 파일로 관리하는 것이 훨씬 편리하다. 
+* \_drafts		: draft는 `초안`의 의미가 있다. **아직 게시되지 않은 포스트를 말한다.**   
+			  파일명 형식에 날짜가 없다. `title.MARKUP`
+* \_includes		: **재사용하기 위한 파일을 담는 디렉토리.** 필요에 따라 포스트나 레이아웃에 삽입
+			  `{% include file.ext %}`와 같이 liquid 태그를 사용하면, `\_includes/file.ext`  
+			  파일에 담긴 코드가 삽입된다.
+* \_layouts		: 포스트를 포장할 때 사용하는 템플릿. YAML 머리말로 포스트별로 레이아웃을 선택하며,  
+			  `{{ content }}`와 같이 liquid 태그를 사용하면 페이지에 컨텐츠가 삽입된다.
+* \_posts		: 실제 포스트들이 담긴다. 이때 **반드시 파일 명명 규칙을 준수해야 하며**, 다음과 같다.
+			  `**YEAR-MONTH-DAY-title.MARKUP**` 주소는 포스트별로 정의할 수 있지만,  
+			  날짜와 마크업 종류는 오로지 파일명에 의해 결정된다.
+* \_data		: 사이트에서 사용할 데이터를 적절한 포맷으로 정리하여 보관하는 디렉토리.  
+			  Jekyll 엔진은 이 디렉토리의 '.yml', '.yaml', '.json', '.csv' 등 모든 YAML 파일을 읽어  
+			  `site.data`로 사용할 수 있게 한다. 예를 들어 `member.yml` 파일이 있다면 이 파일은  
+			  `site.data.member`로 접근할 수 있다.
+* \_site		: Jekyll이 변환 작업을 마친 뒤 생성된 사이트가 저장되는 기본 경로.  
+			  `.gitignore`에 이 폴더를 저장하는 것은 괜찮은 아이디어.
+* .jekyll-metadata	: Jekyll은 이 파일을 참고해 마지막으로 빌드한 이후 한 번도 수정되지 않은 파일은  
+			  어떤 것인지, 다음 빌드 때 어떤 파일을 다시 생성해야 하는지 판단할 수 있다.  
+			  이 파일 또한 `.gitignore`에 추가하는 것은 괜찮은 생각.
+* `index.html` 등	: Jekyll은 YAML 머리말 섹션을 가진 모든 파일을 찾아 변환 작업을 수행.
+			  이 섹션을 가지고 있지 않은 모든 '.html', '.md', '.markdown' 등이 여기 포함.
+* `css`, `image` 폴더	: `favicon`과 같이 이런 폴더나 파일들은 변하지 않고 그대로 생성된 사이트에 복사.
