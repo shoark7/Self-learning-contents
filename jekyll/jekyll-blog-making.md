@@ -32,7 +32,9 @@ jekyll project의 기본 구조는 다음과 같다.
 |   └── members.yml
 ├── _site
 ├── .jekyll-metadata
-└── index.html
+├── index.html
+├── about
+   └── index.html    # url/about  <-- 으로 접근 가능.
 ```
 
 <br>
@@ -109,5 +111,44 @@ Jekyll에서는 css의 확장판인 scss을 지원한다. SASS는 'Syntatically 
 <br>
 
 
+
 ## 2. Layout
 
+
+
+
+<br>
+<br>
+<br>
+
+
+## 3. 정적인 파일
+Jekyll에는 변환이나 렌더링되는 컨텐츠뿐만 아니라 정적 파일이라는 것도 존재한다.  
+정적 파일은 **YAML 머리말이 없는 파일을 의미한다.** 이미지, PDF, css 파일 등을 의미한다.  
+
+이 파일들은 `site.statis_files`라는 Liquid tag를 통해 접근 가능하다.  
+그리고 다음과 같은 메타 태그를 가지고 있다.
+
+* `file.path` : 파일에 대한 상대경로.
+* `file.modified_time` : 파일이 마지막으로 수정된 시간.
+* `file.extname` : 파일의 확장자명. 예를 들어 '.jpg'.
+
+
+<br>
+<br>
+<br>
+
+
+## 4. 변수
+Jekyll은 작업이 필요한 파일을 찾아 사이트 내부를 이리저리 돌아다닌다.  
+작업대상은 **YAML 머리말을 가진 모든 파일**. Jekyll은 Liquid 템플릿 시스템을 통해  
+각각의 작업 대상마다 다양한 데이터를 생성한다. 사용할 수 있는 전역변수들은 다음과 같다.
+
+* `site` : 사이트 정보 + `_config.yml`의 환경설정 정보. 
+* `page` : 해당 페이지 고유 정보 + YAML 머리말 변수 정보. 사용자 정의 변수 추가
+* `content` : 레이아웃에 포함된 포스트 또는 페이지 컨텐츠.
+* `paginator` : 페이지네이션(pagination)을 사용할 때 쓸 수 있다. 
+
+특히, 여기서 `site`, `page`는 정말 중요하다. 이 변수의 속성값도 정말 많은데,  
+구체적인 값은 [다음](http://jekyllrb-ko.github.io/docs/variables/)에서 확인하자.  
+**다 읽는 것을 추천한다.**  
