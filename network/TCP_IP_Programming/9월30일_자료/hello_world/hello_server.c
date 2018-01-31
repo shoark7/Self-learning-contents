@@ -21,7 +21,7 @@ int main()
 
 	// 버클리 소켓 관련 구조체들은 항상 쓰기전에 memset()을 해줘야 한다.
 	// 여기서 sin_family는 IP주소를 뜻한다. 그리고 IP주소로 INADDR_ANY를 설정한 이유는 
-	// 한 컴퓨터에 여러 잠의 LAN 카드가 장착되어 있어서 여러 개의 IP주소가 할당되고, 
+	// 한 컴퓨터에 여러 장의 LAN 카드가 장착되어 있어서 여러 개의 IP주소가 할당되고, 
 	// 서버 응용 프로그램은 이들 IP를 통해 들어오는 모든 연결 요청을 받아 처리하기에 사용한 것이다.
 	memset(&s_addr, 0, sizeof(s_addr));
 	s_addr.sin_addr.s_addr = htonl(INADDR_ANY);
