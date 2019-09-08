@@ -22,7 +22,9 @@
 
 1. **`list.sort()` 함수를 쓰지 않는다.** 이걸 쓰면 너무 쉽죠 사실...
 1. 만약 최대값이 두 개 이상이면, 정답은 그것보다 작아야 한다.(ex: function([2, 2, 2, 1]) --> 1)
-1. 만약 배열 내 모든 값이 똑같다면 두 번째 큰 값은 없기 때문에 `'equality'`라는 문자열을 출력한다.
+1. 만약 배열 내 모든 값이 똑같다면 두 번째 큰 값은 없기 때문에 `'equality'`라는 문자열을 출력한다.  
+
+제가 짠 코드: [second largest integer in python](https://gist.github.com/shoark7/fa2e45c6523ecd52a44cde8963162d1b)
 
 <br>
 <br>
@@ -57,6 +59,7 @@
 1. 입력에는 영어 소문자 이외의 글자는 들어오지 않는다. 예를 들어 대문자, 한글, 공백문자 등.
 
 
+제가 짠 코드: [Caesar cipher](https://gist.github.com/shoark7/49717a2ba422cceb9498fdabf1257e56)
 
 
 <br>
@@ -86,3 +89,6 @@
 :조건:    
 
 1. 입력에는 `()` 이외의 그 어떤 글자도 들어오지 않는다.
+
+
+제가 짠 코드: [is_right_parenthesis](https://gist.github.com/shoark7/59df58b63b2e87b95da7dfe871eda4e7)
